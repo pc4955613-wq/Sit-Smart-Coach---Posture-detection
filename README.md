@@ -29,6 +29,7 @@ cd SitSmartCoach
 Create and activate a virtual environment (Windows example):
 
 py -3.11 -m venv .venv
+
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 .\.venv\Scripts\Activate.ps1
 
@@ -42,11 +43,45 @@ Run the application:
 
 python SitSmartCoach.py
 
-Standalone Executable
 
-A pre-built Windows executable is available in the dist folder:
 
-Double-click SitSmartCoach.exe to launch the app without installing Python or dependencies.
+**Building the Executable (Windows)**
+If you want to run SitSmartCoach without installing Python or dependencies, you can build a standalone executable using PyInstaller:
+
+Step 1: Install PyInstaller
+
+Activate your Python virtual environment and install PyInstaller:
+
+Activate virtual environment (Windows PowerShell)
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+.\.venv\Scripts\Activate.ps1
+
+Install PyInstaller
+pip install pyinstaller
+
+Step 2: Build the Executable
+
+Run PyInstaller with the following command from the project root directory:
+
+pyinstaller --onefile --noconsole --hidden-import=cv2 --hidden-import=mediapipe --hidden-import=numpy SitSmartCoach.py
+
+
+**Building the Executable (Windows)**
+--onefile → Packages everything into a single .exe file
+
+--noconsole → Hides the console window for a clean GUI experience
+
+--hidden-import → Ensures PyInstaller includes dependencies that may not be auto-detected
+
+After building, the executable will be located in the dist folder:
+
+SitSmartCoach\dist\SitSmartCoach.exe
+
+Step 3: Run the Executable
+
+Navigate to the dist folder in File Explorer.
+
+Double-click SitSmartCoach.exe to launch the application.
 
 Usage
 

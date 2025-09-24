@@ -17,6 +17,12 @@ SitSmartCoach is a lightweight, real-time posture monitoring and reminder applic
 
  Optional startup integration for automatic launch on Windows
 
+ **Ready to access application**
+ 
+ Go to Release section and download the SitSmartCoach.exe file
+ 
+ https://github.com/pc4955613-wq/Sit-Smart-Coach---Posture-detection/releases/download/v1.0.0/SitSmartCoach.exe
+
 **Installation**
 Using Python
 
